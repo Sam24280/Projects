@@ -1,0 +1,57 @@
+// C Program to implement a General Calculator using
+// if-else statements
+#include <float.h>
+#include <stdio.h>
+
+double GeneralCalc(double num1, double num2, char op) {
+    int val;
+
+// Perform the operation corresponding to the given
+// operator
+    if (op == '+')
+        val = num1 + num2;
+    else if (op == '-')
+        val = num1 - num2;
+    else if (op == '*')
+        val = num1 * num2;
+    else if (op == '/')
+        val = num1 / num2;
+    else { 
+        printf("Error! Operator is worng.\n");
+        return -DBL_MAX;
+    }
+
+    return val;
+}
+
+int main() {
+    char op;
+    double num1, num2, val;
+
+    // Read the operator
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &op);
+
+    // Read the two numbers
+    printf("Enter two operands: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // Evalute
+    val = GeneralCalc(num1, num2, op);
+
+    // Print the result
+    if (val != -DBL_MAX)
+        printf("Result: %.2lf\n", val);
+
+    return 0;
+}
+
+
+
+
+
+Output: Enter an operator (+, -, *, /): Enter two operands:
++
+99
+11
+Result :110
